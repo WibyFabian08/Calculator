@@ -1,36 +1,34 @@
-class Calculator {
-    input:number
+export default class Calculator {
+    value:number
 
     constructor(input: number) {
-        this.input = input
+        this.value = input
     }
 
     add = (input: number) => {
-        this.input += input
+        this.value += input
     }
 
     substract = (input: number) => {
-        this.input -= input
+        this.value -= input
     }
     
     multiply = (input: number) => {
-        this.input *= input
+        this.value *= input
     }
 
     divided = (input: number) => {
-        this.input /= input
-    }
-
-    result = () => {
-        console.log(this.input)
+        this.value /= input
     }
 }
 
-const calculator = new Calculator(4)
+const result = new Calculator(4)
 
-calculator.add(5)
-calculator.substract(1)
-calculator.multiply(6)
-calculator.divided(4)
+console.log(result.value)
 
-calculator.result()
+result.add(5)
+result.substract(1)
+result.multiply(6)
+result.divided(4)
+
+console.log(result.value)

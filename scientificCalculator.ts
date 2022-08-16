@@ -1,60 +1,34 @@
-class ScientificCalculator {
-    input: number
-    phi: number = 3.14
+import Calculator from "./basicCalculator"
 
-    constructor(input: number) {
-        this.input = input
-    }
-
-    add = (input: number) => {
-        this.input += input
-    }
-
-    substract = (input: number) => {
-        this.input -= input
-    }
-
-    multiply = (input: number) => {
-        this.input *= input
-    }
-
-    divided = (input: number) => {
-        this.input /= input
-    }
-
-    value = (): number => {
-        return this.input
-    }
-
+class ScientificCalculator extends Calculator {
     squared = (): number => {
-        let value = this.input
+        let value = this.value
         value *= value
 
         return value
     }
 
     cubed = (): number => {
-        let value = this.input
+        let value = this.value
         let result = value * value * value
         return result;
     }
 
     circleArea = (): number => {
-        let r = this.input
-        let result = this.phi * (r * r)
+        let r = this.value
+        let result = ScientificCalculator.phi() * (r * r)
         return result
     }
 
     circleRound = (): number => {
-        let r = this.input
-        let result = 2 * this.phi * r
+        let r = this.value
+        let result = 2 * ScientificCalculator.phi() * r
         return result
     }
 
-    printInput = () => {
-        console.log(this.input)
+    static phi = (): number => {
+        return 3.14
     }
-
 }
 
 const sceincalculator = new ScientificCalculator(4)
@@ -64,7 +38,6 @@ sceincalculator.substract(1)
 sceincalculator.multiply(6)
 sceincalculator.divided(4)
 
-console.log(sceincalculator.value())
 console.log(sceincalculator.squared())
 console.log(sceincalculator.cubed())
 console.log(sceincalculator.circleArea())
